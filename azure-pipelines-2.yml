@@ -13,5 +13,21 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: 'select'
+    includeNugetOrg: true
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildplatfomr)'
+    configuration: '$(buildconfiguration)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'wpfLicense'
+
+
