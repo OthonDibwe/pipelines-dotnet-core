@@ -21,7 +21,7 @@ steps:
     feedsToUse: 'select'
     includeNugetOrg: true
 - task: VSBuild@1
-inputs:
+  inputs:
     solution: '$(solution)'
     platform: '$(buildplatfomr)'
     configuration: '$(buildconfiguration)'
