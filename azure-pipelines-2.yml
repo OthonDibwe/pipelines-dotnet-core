@@ -25,7 +25,9 @@ steps:
     solution: '$(solution)'
     platform: '$(buildplatfomr)'
     configuration: '$(buildconfiguration)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'wpfLicense'
 
--publish: $(Build.ArtifactStagingDirectory)
-artifact: wpfLicense
 
