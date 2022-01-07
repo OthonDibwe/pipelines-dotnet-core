@@ -31,5 +31,4 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'D:\a\1\s\DotNetConf\bin\Release\net472\win-x86\'
     artifact: 'Calculator'
